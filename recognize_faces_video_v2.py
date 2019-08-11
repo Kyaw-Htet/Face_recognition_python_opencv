@@ -22,9 +22,9 @@ ap.add_argument("-y", "--display", type=int, default=1,
 	help="whether or not to display output frame to screen")
 ap.add_argument("-d", "--detection-method", type=str, default="cnn",
 	help="face detection model to use: either `hog` or `cnn`")
-ap.add_argument("-w", "--search-width", type=int, default=300,
+ap.add_argument("-w", "--search-width", type=int, default=750,
 	help="face search width, smaller faster but less accurate")
-ap.add_argument("-s", "--similarity-matrix-distance", type=int, default=0.35,
+ap.add_argument("-s", "--similarity-matrix-distance", type=int, default=0.45,
 	help="Similarity Matrix Distance Threshold")
 ap.add_argument("-m", "--face-movement-threshold", type=int, default=5000,
 	help="face movement threshold")
@@ -68,7 +68,7 @@ while True:
 		model=args["detection_method"])
 
 
-	# Contributed by Steve.Kyaw@ncs.com.sg
+	# Contributed by kohtet001@gmail.com
 	# face_recognition with orignial size face
 	boxes_enlarged = []
 	for (top, right, bottom, left) in boxes:
@@ -99,7 +99,7 @@ while True:
 
 
 
-		# Contributed by Steve.Kyaw@ncs.com.sg
+		# Contributed by kohtet001@gmail.com
 		# Find minimal feature
 		min_distance_idx = np.where(distances == min_distance.min())
 		if min_distance < args["similarity_matrix_distance"]:
@@ -124,7 +124,7 @@ while True:
 	# loop over the recognized faces
 	for ((top, right, bottom, left), name) in zip(boxes, names):
 
-		# Contributed by Steve.Kyaw@ncs.com.sg
+		# Contributed by kohtet001@gmail.com
 		names_boxes.append([top, right, bottom, left, name])	#Save previous names and boxes
 
 
