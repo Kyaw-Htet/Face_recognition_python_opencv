@@ -24,9 +24,9 @@ ap.add_argument("-d", "--detection-method", type=str, default="cnn",
 	help="face detection model to use: either `hog` or `cnn`")
 ap.add_argument("-w", "--search-width", type=int, default=750,
 	help="face search width, smaller faster but less accurate")
-ap.add_argument("-s", "--similarity-matrix-distance", type=int, default=0.45,
+ap.add_argument("-s", "--similarity-matrix-distance", type=int, default=0.48,
 	help="Similarity Matrix Distance Threshold")
-ap.add_argument("-m", "--face-movement-threshold", type=int, default=5000,
+ap.add_argument("-m", "--face-movement-threshold", type=int, default=2000,
 	help="face movement threshold")
 args = vars(ap.parse_args())
 
